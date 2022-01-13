@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .user-form {
-  div {
+  .form-field {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .errors {
+    color: red;
   }
 }

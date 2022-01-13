@@ -1,15 +1,29 @@
 <%= form_with model: @user, class: "user-form" do |form| %>
-  <div>
+  <div class="errors">
+    <% unless @user.errors.empty? %>
+      <p>
+        <%= pluralize(@user.errors.count, "error") %> must be fixed before
+        continuing!
+      </p>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="form-field">
     <%= form.label :username, "Enter your name here" %>
     <%= form.text_field :username %>
   </div>
 
-  <div>
+  <div class="form-field">
     <%= form.label :email, "Email address" %>
     <%= form.email_field :email, placeholder: "example@example.com" %>
   </div>
 
-  <div>
+  <div class="form-field">
     <%= form.label :password, "Super secret password" %>
     <%= form.password_field :password %>
   </div>
