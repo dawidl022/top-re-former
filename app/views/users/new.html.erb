@@ -1,12 +1,12 @@
 <%= form_with model: @user, class: "user-form" do |form| %>
   <div>
     <%= form.label :username, "Enter your name here" %>
-    <%= form.text_field :username %>
+    <%= form.text_field :username, value: "sneaky_ocelot123" %>
   </div>
 
   <div>
     <%= form.label :email, "Email address" %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, placeholder: "example@example.com" %>
   </div>
 
   <div>
